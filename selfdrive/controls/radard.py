@@ -219,7 +219,7 @@ def get_lead(v_ego: float, ready: bool, tracks: dict[int, Track], lead_msg: capn
     track.lead_track_id = lead_dict.get('radarTrackId', -1)
 
   if 'dRel' in lead_dict:
-    lead_dict['dRel'] -= frogpilot_toggles.increased_stopped_distance if not frogpilotCarState.trafficMode else 0
+    lead_dict['dRel'] -= frogpilot_toggles.increased_stopped_distance if not frogpilotCarState.trafficModeEnabled else 0
 
   return lead_dict
 

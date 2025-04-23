@@ -15,7 +15,7 @@
 #include "cereal/messaging/messaging.h"
 
 const QString MAPBOX_TOKEN = QString::fromStdString(Params("/cache/params").get("MapboxSecretKey"));
-const QString MAPS_HOST = QStringLiteral("https://api.mapbox.com");
+const QString MAPS_HOST = util::getenv("https://api.mapbox.com").c_str();
 const QString MAPS_CACHE_PATH = "/data/mbgl-cache-navd.db";
 
 QString get_mapbox_token();

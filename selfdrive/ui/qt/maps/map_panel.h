@@ -16,10 +16,11 @@ signals:
 public slots:
   void toggleMapSettings();
 
-private:
-  QStackedLayout *content_stack;
-
+protected:
   // FrogPilot widgets
   void hideEvent(QHideEvent *event);
   void showEvent(QShowEvent *event);
+
+private:
+  QStackedLayout *content_stack;
 };

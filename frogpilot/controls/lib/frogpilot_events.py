@@ -226,12 +226,12 @@ class FrogPilotEvents:
     startup_alert_match = controlsState.alertText1 == frogpilot_toggles.startup_alert_top and controlsState.alertText2 == frogpilot_toggles.startup_alert_bottom
     self.startup_seen |= startup_alert_match
 
-    if frogpilotCarState.trafficMode != self.previous_traffic_mode:
+    if frogpilotCarState.trafficModeEnabled != self.previous_traffic_mode:
       if self.previous_traffic_mode:
         self.events.add(EventName.trafficModeInactive)
       else:
         self.events.add(EventName.trafficModeActive)
-      self.previous_traffic_mode = frogpilotCarState.trafficMode
+      self.previous_traffic_mode = frogpilotCarState.trafficModeEnabled
 
     if modelData.meta.turnDirection == Desire.turnLeft:
       self.events.add(EventName.turningLeft)

@@ -36,7 +36,7 @@ struct FrogPilotCarState @0xaedffd8f31e7b55d {
   pauseLateral @11 :Bool;
   pauseLongitudinal @12 :Bool;
   sportGear @13 :Bool;
-  trafficMode @14 :Bool;
+  trafficModeEnabled @14 :Bool;
 }
 
 struct FrogPilotDeviceState @0xf35cc4560bbf6ec2 {
