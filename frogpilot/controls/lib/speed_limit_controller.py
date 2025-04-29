@@ -323,8 +323,8 @@ class SpeedLimitController:
       self.unconfirmed_speed_limit = 0
 
   def update_override(self, carState, controlsState, v_cruise, v_ego):
-    self.override_slc = self.overridden_speed > self.target + self.offset
-    self.override_slc |= carState.gasPressed and v_ego > self.target + self.offset
+    self.override_slc = self.overridden_speed > self.target + self.offset > 0
+    self.override_slc |= carState.gasPressed and v_ego > self.target + self.offset > 0
     self.override_slc &= controlsState.enabled
 
     if self.override_slc:
